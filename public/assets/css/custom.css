@@ -1,0 +1,108 @@
+body{
+    background-image: url();
+}
+.navbar-brand{
+    height: auto;
+}
+.navbar{
+    padding-bottom: 20px;
+}
+.navbar-nav{
+    flex-direction: row;
+}
+.navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl{
+    flex-wrap: nowrap;
+}
+.underline{
+    text-decoration: underline !important;
+}
+.no-underline{
+    text-decoration: none !important;
+}
+.mainNav .fa{
+    display: block;
+    font-size: 50px;
+    text-align: center;
+}
+.grey-box-icon h4{
+    font-size: 18px;
+    font-weight: bold;
+}
+.grey-box-icon{
+    padding: 10px 5px 5px 5px;
+    margin: 20px;
+}
+.aside{
+    background: #29aae2;
+    padding: 0px 10px;
+    border-top: 1px solid white;
+}
+.navbar-inverse{
+    background-color:   #29aae2;
+}
+.navbar-inverse .navbar-brand img{
+    margin-top: 0;
+}
+.title-box_primary{
+    color: #FAFAFA;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.list.custom-list ul li a{
+    color: #FAFAFA;
+}
+.c8{
+    background-color: #ff5555;
+    color: white;
+}
+.c8 a{
+    color: white !important;
+}
+.title-box{
+    color: black;
+    font-size: 30px;
+}
+.pl-25 {
+    padding-left: 25px;
+}
+.pb-25 {
+    padding-bottom: 25px;
+}
+.mt-25 {
+    margin-top: 25px;
+}
+#logo-text{
+    display: table-row;
+    color:white;
+    font-size:50px;
+
+}
+.small-text{
+    font-size: 15px;
+}
+.navbar-header{
+    width: 1000px;
+}
+.thumbnail .caption{
+    height: 160px;
+    background-color: #f3f3f3;
+}
+.flat .plan li.plan-name{
+    background: #ff5555;
+}
+.plan-price{
+    font-size: 35px;
+}
+
+.flat .plan li{
+    color: #6B6B6B;
+}
+.btn-two{
+    font-size: 24px;
+    width: 100%;
+}
+.form-control{
+    padding: 5px;
+    font-size: 18px;
+}
