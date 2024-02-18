@@ -42,7 +42,7 @@
             <!-- Button for smallest screens
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
             -->
-            <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="УчёныйКотик"></a>
+            <a class="navbar-brand" href="/"><img src="assets/images/logo.png" alt="УчёныйКотик"></a>
             <span id="logo-text">
             <p class="small-text mt-5 mb-0">Всероссийские олимпиады</p>
             <p>«Учёный котик»</p>
@@ -50,11 +50,11 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav pull-right mainNav">
-                <li class="c1 active"><a href="index.html" class="fw-bold no-underline"><i class="fa fa-home"></i>Главная</a></li>
-                <li class="c2"><a href="about.html" class="fw-bold no-underline"><i class="fa fa-calendar"></i>Расписание</a></li>
-                <li class="c3"><a href="courses.html" class="fw-bold no-underline"><i class="fa fa-pencil"></i>Регистрация</a></li>
-                <li class="c8"><a href="price.html" class="fw-bold no-underline"><i class="fa fa-trophy"></i>Победители</a></li>
-                <li class="c5"><a href="videos.html" class="fw-bold no-underline"><i class="fa fa-question-circle"></i>Справка</a></li>
+                <li class="c1 active"><a href="/" class="fw-bold no-underline"><i class="fa fa-home"></i>Главная</a></li>
+                <li class="c2"><a href="/events" class="fw-bold no-underline"><i class="fa fa-calendar"></i>Расписание</a></li>
+                <li class="c3"><a href="/reg" class="fw-bold no-underline"><i class="fa fa-pencil"></i>Регистрация</a></li>
+                <li class="c8"><a href="/cup" class="fw-bold no-underline"><i class="fa fa-trophy"></i>Победители</a></li>
+                <li class="c5"><a href="/info" class="fw-bold no-underline"><i class="fa fa-question-circle"></i>Справка</a></li>
             </ul>
         </div>
         <!--/.nav-collapse -->
@@ -62,7 +62,43 @@
 </div>
 </div>
 <!-- /.navbar -->
+<div class="container bg-white">
+    <div class="row">
+        <div class="col-3 aside">
+            <div class="row">
+                <div class="title-box clearfix "><h2 class="title-box_primary">Личный кабинет</h2></div>
+                <form class="form-light" role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Электронная почта">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Пароль">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-two">Вход</button>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-two">Регистрация</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="list styled custom-list">
+                    <ul>
+                        <li><a title="Восстановление пароля" href="#">Забыли пароль?</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 @yield('content')
+
+    </div>
+
+</div>
 
 <footer id="footer">
 

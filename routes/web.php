@@ -17,6 +17,11 @@ use Illuminate\Support\Facades\Route;
 mb_internal_encoding("UTF-8");
 
 Route::get('/', 'App\Http\Controllers\IndexController@index')->name('index');
+Route::get('/info', function () {
+  return view('pages/info');
+});
+Route::get('/', 'App\Http\Controllers\EventsController@index')->name('events');
+
 
 //Левое
 Route::get('/random_time', 'App\Http\Controllers\TripsController@get_random_time')->name('random_time');
