@@ -27,7 +27,7 @@ class Events extends Model
     }
 
 
-    public function getEventById($id)
+    public function getById($id)
     {
         return $user = DB::table('events')->where('id', '=', $id)->first();
     }

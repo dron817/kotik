@@ -32,28 +32,28 @@
             <div class="grey-box-icon b1">
                 <h4>Олимпиады по математике</h4>
                 <p>Математика – королева наук. Если вы стремитесь вдохновить своих учеников на изучение чисел, форм и алгоритмов, наши олимпиады по математике предоставят им идеальную площадку для развития логического мышления и аналитических навыков.</p>
-                <p><a class="no-underline"  href="#"><em>Перейти →</em></a></p>
+                <p><a class="no-underline"  href="{{ route('events') }}/math"><em>Перейти →</em></a></p>
             </div><!--grey box -->
         </div><!--/span3-->
         <div class="col-md-6 p-0">
             <div class="grey-box-icon b2">
                 <h4>Олимпиады по русскому языку</h4>
                 <p>Слово имеет силу, а русский язык богат и многогранен. Пригласите своих учеников исследовать глубины грамматики, орфографии и стилистики в наших олимпиадах по русскому языку, где они смогут проявить своё мастерство владения словом.</p>
-                <p><a class="no-underline"  href="#"><em>Перейти →</em></a></p>
+                <p><a class="no-underline"  href="{{ route('events') }}/rus"><em>Перейти →</em></a></p>
             </div><!--grey box -->
         </div><!--/span3-->
         <div class="col-md-6 p-0">
             <div class="grey-box-icon b4">
                 <h4>Олимпиады по окружающему миру</h4>
                 <p>Окружающий мир полон чудес, которые ждут своих исследователей. Познавательные олимпиады по окружающему миру позволят вашим ученикам раскрыть тайны природы и общества, углубить знания в естественных и социальных науках.</p>
-                <p><a class="no-underline"  href="#"><em>Перейти →</em></a></p>
+                <p><a class="no-underline"  href="{{ route('events') }}/mir"><em>Перейти →</em></a></p>
             </div><!--grey box -->
         </div><!--/span3-->
         <div class="col-md-6 p-0">
             <div class="grey-box-icon b3">
                 <h4>Метапредметные олимпиады</h4>
                 <p>Интеграция знаний – ключ к развитию универсальных умений. Наши метапредметные олимпиады предлагают учащимся возможность соединить различные области знаний, демонстрируя компетентность в решении задач и проектной деятельности.</p>
-                <p><a class="no-underline" href="#"><em>Перейти →</em></a></p>
+                <p><a class="no-underline" href="{{ route('events') }}/meta"><em>Перейти →</em></a></p>
             </div><!--grey box -->
         </div><!--/span3-->
     </div>
@@ -65,11 +65,13 @@
                     <div class="thumbnail">
                         <div class="caption maxheight2">
                             <div class="box_inner">
-                                <div class="box">
-                                    <p class="title"><h4 class="fw-bold">{{ $event->title }}</h4></p>
-                                    <p>{{ $event->description }}</p>
-                                    <p><i class="fa fa-calendar"></i> Приём заявок до: <span class="underline">{{ $event->deadline }}</span></p>
-                                </div>
+                                <a class="no-link-styles" href="{{ route('event') }}/{{ $event->id }}">
+                                    <div class="box">
+                                        <p class="title"><h4 class="fw-bold">{{ $event->title }}</h4></p>
+                                        <p>{{ $event->description }}</p>
+                                        <p><i class="fa fa-calendar"></i> Приём заявок до: <span class="underline"><b>{{ $event->date }}</b></span></p>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -107,10 +109,10 @@
 
         <div class="col-lg-3 col-md-3 col-xs-6">
             <ul class="plan plan2 featured">
-                <li class="plan-name">Учавствовать классом
+                <li class="plan-name">Участвовать классом
                 </li>
                 <li class="plan-price">
-                    <strong>65</strong> ₽
+                    <strong>70</strong> ₽
                 </li>
                 <li>
                     <strong>10-35</strong> Участников
@@ -120,10 +122,10 @@
 
         <div class="col-lg-3 col-md-3 col-xs-6">
             <ul class="plan plan4">
-                <li class="plan-name">Учавствовать параллелью
+                <li class="plan-name">Участвовать параллелью
                 </li>
                 <li class="plan-price">
-                    <strong>65</strong> ₽
+                    <strong>60</strong> ₽
                 </li>
                 <li>
                     <strong>36+</strong> Участников

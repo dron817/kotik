@@ -17,26 +17,13 @@ use Illuminate\Support\Facades\Route;
 mb_internal_encoding("UTF-8");
 
 Route::get('/', 'App\Http\Controllers\IndexController@index')->name('index');
-Route::get('/info', function () {
-  return view('pages/info');
-});
-Route::get('/', 'App\Http\Controllers\EventsController@index')->name('events');
+Route::get('/events/{slashData?}', 'App\Http\Controllers\EventsController@index')->where('slashData', '(.*)')->name('events');
+//Route::get('/event', 'App\Http\Controllers\EventsController@getEvent')->name('event');
+Route::get('event/{slashData?}', 'App\Http\Controllers\EventsController@getEvent')->where('slashData', '(.*)')->name('event');
+Route::get('/info', function () {  return view('pages/info');})->name('info');
 
 
 //Левое
-Route::get('/random_time', 'App\Http\Controllers\TripsController@get_random_time')->name('random_time');
-
-Route::get('/tickets_list', 'App\Http\Controllers\TripsController@getTrip')->name('tickets');
-Route::get('/places', 'App\Http\Controllers\PlacesController@getPlaces')->name('places');
-Route::get('/print', 'App\Http\Controllers\OrderController@print')->name('print');
-Route::get('/order_show', 'App\Http\Controllers\OrderController@getOrder')->name('getOrder');
-Route::any('/checkEmpty', 'App\Http\Controllers\OrderController@checkEmpty')->name('checkEmpty');
-Route::any('/letBuy', 'App\Http\Controllers\OrderController@letBuy')->name('letBuy');
-Route::any('/RefundPage', 'App\Http\Controllers\OrderController@RefundPage')->name('RefundPage');
-Route::any('/letRefund', 'App\Http\Controllers\OrderController@letRefund')->name('letRefund');
-Route::get('/sendSMS', 'App\Http\Controllers\OrderController@sendSMS')->name('sendSMS');
-
-Route::any('/pay/callback', [App\Http\Controllers\Payment\PaymentController::class, 'payCallback'])->name('pay.callback');
 
 Auth::routes();
 Route::get('/auth', 'App\Http\Controllers\lk\UserAuthController@index')->name('UserAuth');
@@ -46,21 +33,12 @@ Route::middleware(['auth'])->prefix('lk')->group( function(){
 
 Route::middleware(['role:admin|agent'])->prefix('home')->group( function(){
     Route::get('/', 'App\Http\Controllers\AdminController@getPanel')->name('admin.home');
-    Route::get('/add', 'App\Http\Controllers\AdminController@getAdder')->name('admin.add');
-    Route::get('/print', 'App\Http\Controllers\AdminController@getPrint')->name('admin.print');
-    Route::get('/exel', 'App\Http\Controllers\AdminController@getExel')->name('admin.exel');
-    Route::get('/edit', 'App\Http\Controllers\AdminController@getEditor')->name('admin.edit');
-    Route::any('/letEdit', 'App\Http\Controllers\AdminController@letEdit')->name('admin.letEdit');
     Route::get('/delete', 'App\Http\Controllers\AdminController@delOrder')->name('admin.delete');
     Route::get('/restore', 'App\Http\Controllers\AdminController@restore')->name('admin.restore');
     Route::get('/showDeleted', 'App\Http\Controllers\AdminController@getDeleted')->name('admin.showDeleted');
     Route::get('/last', 'App\Http\Controllers\AdminController@lastOrders')->name('admin.last');
-    Route::get('/tripsManagement', 'App\Http\Controllers\AdminController@tripsManagement')->name('admin.tripsManagement');
-    Route::get('/letEditTrip', 'App\Http\Controllers\AdminController@letEditTrip')->name('admin.letEditTrip');
-    Route::any('/booking', 'App\Http\Controllers\OrderController@letBooking')->name('letBooking');
 });
 
-Route::any('/daemon', 'App\Http\Controllers\Daemon@index')->name('daemon');
 Route::any('/console', 'App\Http\Controllers\Console@index')->name('console');
 Route::middleware(['role:admin'])->prefix('dev')->group( function(){
     Route::get('clear', function () {
@@ -71,7 +49,7 @@ Route::middleware(['role:admin'])->prefix('dev')->group( function(){
         return "Кэш очищен.";
     });
 //     Route::get('migrate', function () {
-//         Artisan::call('migrate'); //возможно, это не безопасно, надо выяснить или удалить при продакшене
+//         Artisan::call('migrate --fresh'); //возможно, это не безопасно, надо выяснить или удалить при продакшене
 //         return "Миграции выполнены";
 //     });
 //     Route::get('seed', function () {
@@ -85,3 +63,7 @@ Route::middleware(['role:admin'])->prefix('dev')->group( function(){
 });
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

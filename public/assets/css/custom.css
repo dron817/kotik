@@ -104,3 +104,54 @@
     padding: 5px;
     font-size: 18px;
 }
+.newsBox-page .thumbnail .caption{
+    height: auto;
+}
+.newsBox-page .thumbnail .join{
+    transition: background-color 0.5s;
+    float: right;
+    position: relative;
+    top: -40px;
+    text-decoration: none;
+    color: white;
+    background-color: #3d84e6;
+    padding: 10px;
+}
+
+.btn{
+    font-size: 15px;
+}
+.btn:hover{
+    background-color: #5da4f6 !important;
+}
+.navbar-inverse .navbar-nav > li.c1 a,
+.navbar-inverse .navbar-nav > li.c2 a,
+.navbar-inverse .navbar-nav > li.c3 a,
+.navbar-inverse .navbar-nav > li.c4 a,
+.navbar-inverse .navbar-nav > li.c5 a
+{
+    transition: background-color 0.5s;
+}
+.navbar-inverse .navbar-nav > li.c1 a:hover, .navbar-inverse .navbar-nav > li.c2.active a {
+    background: #3d84e6;
+}
+.navbar-inverse .navbar-nav > li.c2 a:hover, .navbar-inverse .navbar-nav > li.c2.active a {
+    background: #3d84e6;
+}
+.navbar-inverse .navbar-nav > li.c3 a:hover, .navbar-inverse .navbar-nav > li.c3.active a{
+    background: #3d84e6;
+}
+.navbar-inverse .navbar-nav > li.c4 a:hover, .navbar-inverse .navbar-nav > li.c3.active a{
+    background: #3d84e6;
+}
+.navbar-inverse .navbar-nav > li.c5 a:hover, .navbar-inverse .navbar-nav > li.c3.active a{
+    background: #3d84e6;
+}
+.no-link-styles{
+    color: #606577;
+    text-decoration: none;
+}
+.no-link-styles:hover{
+    color: #606577;
+    text-decoration: none;
+}
